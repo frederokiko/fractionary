@@ -1,0 +1,72 @@
+.shape { width:80px; height: 80px; position: relative; }
+.shape::before { content:''; position:absolute; inset:0; background: var(--c, #ddd); }
+
+.shape.unit::before {           /* hexagone 173.2 x 200*/
+  /* c'est divisé par 3 pour le ratio hauteur largeur */
+  width: 57,7px; /* pour un hexagone parfait (largeur = √3/2 × 200) */
+    height: 66.6px;
+  clip-path: polygon(
+      50% 0%,     /* sommet haut */
+      100% 25%,   /* coin haut droit */
+      100% 75%,   /* coin bas droit */
+      50% 100%,   /* bas centre */
+      0% 75%,     /* coin bas gauche */
+      0% 25%      /* coin haut gauche */
+    );
+  border: 1px solid #2222;
+}
+.shape.half::before {           /* trapèze 200 x 200*/
+  width: 60.6px;
+  height: 66.6px; 
+  clip-path: polygon(
+    50% 0%,    /* sommet haut milieu (angle supérieur de l’hexagone) */
+    100% 25%,  /* coin haut droit (correspond au coin de l’hexagone) */
+    100% 75%,  /* coin bas droit */
+    50% 100%   /* coin bas milieu */
+  );
+  border: 1px solid #2222;
+}
+.shape.third::before {          /* losange 200 x 100*/
+      width: 66.6px;  /* largeur horizontale */
+    height: 33.3px; /* hauteur verticale */
+    clip-path: polygon(
+      50% 0%,   /* sommet haut (angle aigu) */
+      100% 50%, /* coin droit (angle obtus) */
+      50% 100%, /* bas (angle aigu) */
+      0% 50%    /* coin gauche (angle obtus) */
+    );
+    box-sizing: border-box;
+  border: 1px solid #2222;
+}
+.shape.sixth::before {          /* triangle équilatéral 86.6 x 100 */
+   width: 28.8px;   /* largeur de la base (peut correspondre à la moitié de l'hexagone) */
+  height: 33.3px;   /* hauteur du triangle */ 
+  /* clip-path pour un triangle isocèle */
+  clip-path: polygon(
+    50% 0%,    /* sommet en haut, centré */
+    100% 100%, /* coin bas droit */
+    0% 100%    /* coin bas gauche */
+  );
+  border: 1px solid #2222;
+}
+.shape.twelfth::before {        /* triangle rectangle 57.7 x 66.6*/
+  width: 19.2px;   /* 1/3 largeur hexagone */
+  height: 22.2px;  /* 1/3 hauteur hexagone */  
+  clip-path: polygon(
+   0 1%,       /* sommet en haut, centré */
+   0% 100%,    /* coin bas droit */
+   100% 100%   /* coin bas gauche */
+  );
+  border: 1px solid #2222;
+}
+.shape.edge::before {           /* parallelogramme 57.7 x 66.6 */
+  width: 19.2px;   /* 1/3 largeur hexagone */
+  height: 22.2px;  /* 1/3 hauteur hexagone */
+  clip-path: polygon(
+    25% 0%,   /* coin haut gauche */
+    100% 0%,  /* coin haut droit */
+    75% 100%, /* coin bas droit */
+    0% 100%   /* coin bas gauche */
+  );
+  border: 1px solid #2222;
+}

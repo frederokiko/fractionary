@@ -1,0 +1,23 @@
+.canvas {
+  position: relative;
+  width: min(90vw, 700px);
+  aspect-ratio: 4 / 3;       /* responsive */
+  margin: 0 auto;
+  background: #00000010;
+  border-radius: 16px;
+}
+
+.spot { position: absolute; transform: translate(-50%, -50%); }
+
+.fraction-panel {
+  position: absolute; right: 8px; top: 8px;
+  background: #fff; border: 1px solid #ddd; border-radius: 10px;
+  padding: 8px 12px;
+  box-shadow: 0 6px 20px #0001;
+}
+.celebrate {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-size: 2rem; font-weight: 700; color: #6a4cff;
+  animation: pop 0.8s ease;
+}
+@keyframes pop { 0%{ transform: scale(0.5); opacity:0; } 100%{ transform: scale(1); opacity:1; } }

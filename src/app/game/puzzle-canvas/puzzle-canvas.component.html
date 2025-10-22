@@ -1,0 +1,20 @@
+<div class="canvas">
+  <ng-container *ngFor="let s of puzzle.shapes">
+    <div class="spot"
+         [style.left.%]="s.x" [style.top.%]="s.y">
+      <!-- état MEMORIZE: montrer couleurs; PLAY: blanc si non rempli -->
+      <pb-shape
+        [kind]="s.kind"
+        [r]="s.r || 0"
+        [color]=" game.state==='memorize' || game.isFilled(s.id) ? (s.color||'#ddd') : '#fff' "
+        ></pb-shape>
+    </div>
+  </ng-container>
+
+  <!-- Panneau fractions en haut-droite -->
+  <div class="fraction-panel">
+    <pb-fraction-panel></pb-fraction-panel>
+  </div>
+  <div *ngIf="game.state==='win'" class="celebrate">✨ Bravo, puzzle complet ! ✨</div>
+
+</div>
