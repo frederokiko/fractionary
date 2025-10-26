@@ -36,10 +36,7 @@
   --path: polygon(50% 0%, 100% 25%, 50% 50%, 0% 25%);
 }
 
-/* 1/4 : quart supérieur droit (A–B–O–milieu BO) */
-/* .shape.quarter::before {
-  --path: polygon(50% 0%, 100% 25%, 100% 50%, 50% 50%);
-} */
+
 /* 1/4 côté droit : A → B → milieu(BC) → O */
 .shape.quarterd::before{
   clip-path: polygon(50% 0%, 100% 25%, 100% 50%, 50% 50%);
@@ -74,7 +71,6 @@
   clip-path: polygon(50% 0%, 78.8675% 14.4338%, 21.1325% 14.4338%);
   border:1px solid #2222;
 }
-
 /* >>> ancrer la rotation sur le sommet A de l'hexagone (50% 0%) */
 .shape.eighteenth { 
   transform-origin: 50% 0%;
@@ -85,9 +81,17 @@
 }
 /* ici s'arrete le 1/18 em */
 
-
 /* 1/9 : 2 × 1/18 d’un coup → A–T2–O (T2 = 83.3333,16.6667) */
-.shape.ninth::before {
-  --path: polygon(50% 0%, 83.3333% 16.6667%, 50% 50%);
+
+.shape.edge::before{
+  clip-path: polygon(
+    50% 50%,      /* O */
+    83.3333% 50%, /* O + 2/3 vers (100,50) */
+    100% 33.3333%,/* O + 2/3 vers (100,50) + 2/3 vers (75,25) */
+    66.6667% 33.3333% /* O + 2/3 vers (75,25) */
+  );
+  border: 1px solid #2222;   /* optionnel */
 }
 
+/* pour que les rotations restent centrées */
+.shape.edge { transform-origin: 50% 50%; }

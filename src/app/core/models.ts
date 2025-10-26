@@ -5,7 +5,8 @@ export type ShapeKind =
   | 'quarterd'     // trapèze = 1/4 droite
   | 'quarterg'   // trapèze = 1/4 gauche
   | 'sixth'    // triangle = 1/6
-  | 'edge'      // triangle = 1/6
+  | 'edge'      // triangle = 1/9
+  //| 'ninth'       // petit triangle = 1/9
   | 'twelfthd'     // petit triangle = 1/12 droite
   | 'twelfthg'   // petit triangle = 1/12 gauche
   | 'eighteenth';       // paralelograme (la “queue” violette)
