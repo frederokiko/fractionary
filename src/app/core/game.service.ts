@@ -19,7 +19,7 @@ export class GameService {
     this.placed.clear();
 
     // après 3s, on passe en jeu
-    setTimeout(() => this.state = 'play', 3000);
+    setTimeout(() => this.state = 'play', 30000);
   }
 
   tryPlace(puzzle: PuzzleDefinition, chosenKind: ShapeKind): {ok: boolean, targetId?: string} {

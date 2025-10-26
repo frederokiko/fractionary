@@ -2,9 +2,13 @@ export type ShapeKind =
   | 'unit'        // hexagone = 1
   | 'half'        // trapèze = 1/2
   | 'third'       // losange/parallélogramme = 1/3
-  | 'sixth'       // triangle = 1/6
-  | 'twelfth'     // petit triangle = 1/12 (si tu en veux)
-  | 'edge';       // paralelograme (la “queue” violette)
+  | 'quarterd'     // trapèze = 1/4 droite
+  | 'quarterg'   // trapèze = 1/4 gauche
+  | 'sixth'    // triangle = 1/6
+  | 'edge'      // triangle = 1/6
+  | 'twelfthd'     // petit triangle = 1/12 droite
+  | 'twelfthg'   // petit triangle = 1/12 gauche
+  | 'eighteenth';       // paralelograme (la “queue” violette)
 
 export interface ShapeSpec {
   id: string;            // unique pour chaque emplacement du puzzle

@@ -1,72 +1,93 @@
-.shape { width:80px; height: 80px; position: relative; }
-.shape::before { content:''; position:absolute; inset:0; background: var(--c, #ddd); }
+/* CADRE UNIQUE pour toutes les formes */
+.shape {
+  --h: 85px;                                       /* hauteur hexagone */
+  --w: calc(var(--h) * 0.8660254037844386);        /* √3/2 * hauteur */
+  width: var(--w);
+  height: var(--h);
+  position: relative;
+  transform-origin: center;                         /* pour tes rotations r */
+}
 
-.shape.unit::before {           /* hexagone 173.2 x 200*/
-  /* c'est divisé par 3 pour le ratio hauteur largeur */
-  width: 57,7px; /* pour un hexagone parfait (largeur = √3/2 × 200) */
-    height: 66.6px;
-  clip-path: polygon(
-      50% 0%,     /* sommet haut */
-      100% 25%,   /* coin haut droit */
-      100% 75%,   /* coin bas droit */
-      50% 100%,   /* bas centre */
-      0% 75%,     /* coin bas gauche */
-      0% 25%      /* coin haut gauche */
-    );
-  border: 1px solid #2222;
+.shape::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: var(--c, #ddd);
+  box-sizing:border-box;
+  border: 1px solid #2222;                          /* si tu veux liserer */
+  clip-path: var(--path);                           /* <- clé */
 }
-.shape.half::before {           /* trapèze 200 x 200*/
-  width: 60.6px;
-  height: 66.6px; 
-  clip-path: polygon(
-    50% 0%,    /* sommet haut milieu (angle supérieur de l’hexagone) */
-    100% 25%,  /* coin haut droit (correspond au coin de l’hexagone) */
-    100% 75%,  /* coin bas droit */
-    50% 100%   /* coin bas milieu */
+
+/* === Repère commun : orientation 'pointe en haut' ================== */
+/* 1/1 */
+.shape.unit::before {
+  --path: polygon(
+    50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%
   );
+}
+
+/* 1/2 : moitié verticale (droite). La moitié gauche = rotation 180° */
+.shape.half::before {
+  --path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%);
+}
+
+/* 1/3 : losange (A–B–O–F) */
+.shape.third::before {
+  --path: polygon(50% 0%, 100% 25%, 50% 50%, 0% 25%);
+}
+
+/* 1/4 : quart supérieur droit (A–B–O–milieu BO) */
+/* .shape.quarter::before {
+  --path: polygon(50% 0%, 100% 25%, 100% 50%, 50% 50%);
+} */
+/* 1/4 côté droit : A → B → milieu(BC) → O */
+.shape.quarterd::before{
+  clip-path: polygon(50% 0%, 100% 25%, 100% 50%, 50% 50%);
   border: 1px solid #2222;
 }
-.shape.third::before {          /* losange 200 x 100*/
-      width: 66.6px;  /* largeur horizontale */
-    height: 33.3px; /* hauteur verticale */
-    clip-path: polygon(
-      50% 0%,   /* sommet haut (angle aigu) */
-      100% 50%, /* coin droit (angle obtus) */
-      50% 100%, /* bas (angle aigu) */
-      0% 50%    /* coin gauche (angle obtus) */
-    );
-    box-sizing: border-box;
+
+/* 1/4 côté gauche (MIROIR) : A → F → milieu(FE) → O */
+.shape.quarterg::before{
+  clip-path: polygon(50% 0%, 0% 25%, 0% 50%, 50% 50%);
   border: 1px solid #2222;
 }
-.shape.sixth::before {          /* triangle équilatéral 86.6 x 100 */
-   width: 28.8px;   /* largeur de la base (peut correspondre à la moitié de l'hexagone) */
-  height: 33.3px;   /* hauteur du triangle */ 
-  /* clip-path pour un triangle isocèle */
-  clip-path: polygon(
-    50% 0%,    /* sommet en haut, centré */
-    100% 100%, /* coin bas droit */
-    0% 100%    /* coin bas gauche */
-  );
-  border: 1px solid #2222;
+/* 1/6 : triangle A–B–O */
+.shape.sixth::before {
+  --path: polygon(50% 0%, 100% 25%, 50% 50%);
+  
 }
-.shape.twelfth::before {        /* triangle rectangle 57.7 x 66.6*/
-  width: 19.2px;   /* 1/3 largeur hexagone */
-  height: 22.2px;  /* 1/3 hauteur hexagone */  
-  clip-path: polygon(
-   0 1%,       /* sommet en haut, centré */
-   0% 100%,    /* coin bas droit */
-   100% 100%   /* coin bas gauche */
-  );
-  border: 1px solid #2222;
+
+/* 1/12 “côté A” (A–Mab–O) */
+.shape.twelfthd::before{
+  clip-path:polygon(50% 0%, 75% 12.5%, 50% 50%);
+  border:1px solid #2222;
 }
-.shape.edge::before {           /* parallelogramme 57.7 x 66.6 */
-  width: 19.2px;   /* 1/3 largeur hexagone */
-  height: 22.2px;  /* 1/3 hauteur hexagone */
-  clip-path: polygon(
-    25% 0%,   /* coin haut gauche */
-    100% 0%,  /* coin haut droit */
-    75% 100%, /* coin bas droit */
-    0% 100%   /* coin bas gauche */
-  );
-  border: 1px solid #2222;
+
+/* 1/12 “côté B” (B–Mab–O) → MIRROR exact */
+.shape.twelfthg::before{
+  clip-path:polygon(100% 25%, 75% 12.5%, 50% 50%);
+  border:1px solid #2222;
 }
+
+/* 1/18 (triangle 120°/30°/30°) — coordonnées OK */
+.shape.eighteenth::before{
+  clip-path: polygon(50% 0%, 78.8675% 14.4338%, 21.1325% 14.4338%);
+  border:1px solid #2222;
+}
+
+/* >>> ancrer la rotation sur le sommet A de l'hexagone (50% 0%) */
+.shape.eighteenth { 
+  transform-origin: 50% 0%;
+}
+/* pour les autres formes, on peut garder l’origine au centre */
+.shape:not(.eighteenth) {
+  transform-origin: 50% 50%;
+}
+/* ici s'arrete le 1/18 em */
+
+
+/* 1/9 : 2 × 1/18 d’un coup → A–T2–O (T2 = 83.3333,16.6667) */
+.shape.ninth::before {
+  --path: polygon(50% 0%, 83.3333% 16.6667%, 50% 50%);
+}
+
