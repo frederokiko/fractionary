@@ -12,7 +12,11 @@ import { ShapeKind } from '../../core/models';
 export class KatComponent implements OnInit {
   puzzle = CAT_PUZZLE;
   constructor(public game: GameService) {}
-  ngOnInit() { this.game.start(this.puzzle); }   // montre 3s puis blanc
+  //ngOnInit() { this.game.start(this.puzzle); }   
+  ngOnInit() {
+  this.game.setReference('cat');
+  this.game.start(this.puzzle);
+}
 
   onChoose(kind: ShapeKind) {
     const { ok } = this.game.tryPlace(this.puzzle, kind);

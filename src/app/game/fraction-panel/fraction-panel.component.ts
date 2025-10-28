@@ -28,8 +28,11 @@ export class FractionPanelComponent {
       case 'quarterd': return '1/4';
       case 'quarterg': return '1/4';
       case 'sixth': return '1/6';
-      case 'twelfth': return '1/12';
-      case 'edge': return '1/9';
+      case 'twelfthd': return '1/12';
+      case 'twelfthg': return '1/12';
+      case 'eighteenth': return '1/18';
+      case 'ninth-top': return '1/9';
+      case 'ninth-mid': return '1/9';
       default: return k;
     }
   }

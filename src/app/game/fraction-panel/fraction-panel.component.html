@@ -1,1 +1,7 @@
-<p>fraction-panel works!</p>
+<!-- src/app/game/fraction-panel/fraction-panel.component.html -->
+<ng-container *ngIf="game.state!=='win'; else gg">
+  <strong>Fraction :</strong>
+  <span class="frac" *ngIf="game.currentFraction as k">{{ game.getFractionLabel(k) }}</span>
+</ng-container>
+<ng-template #gg><strong>Terminé ✔</strong></ng-template>
+

@@ -5,7 +5,7 @@
   width: var(--w);
   height: var(--h);
   position: relative;
-  transform-origin: center;                         /* pour tes rotations r */
+  transform-origin: 50% 50%;                         /* pour tes rotations r */
 }
 
 .shape::before{
@@ -14,8 +14,8 @@
   inset:0;
   background: var(--c, #ddd);
   box-sizing:border-box;
-  border: 1px solid #2222;                          /* si tu veux liserer */
-  clip-path: var(--path);                           /* <- clé */
+  border: 1px solid #2222;                          
+  clip-path: var(--path);                          
 }
 
 /* === Repère commun : orientation 'pointe en haut' ================== */
@@ -81,17 +81,34 @@
 }
 /* ici s'arrete le 1/18 em */
 
-/* 1/9 : 2 × 1/18 d’un coup → A–T2–O (T2 = 83.3333,16.6667) */
-
-.shape.edge::before{
-  clip-path: polygon(
-    50% 50%,      /* O */
-    83.3333% 50%, /* O + 2/3 vers (100,50) */
-    100% 33.3333%,/* O + 2/3 vers (100,50) + 2/3 vers (75,25) */
-    66.6667% 33.3333% /* O + 2/3 vers (75,25) */
-  );
-  border: 1px solid #2222;   /* optionnel */
+/* ===== 1/9 : parallélogrammes inscrits (direction 0°–60°) ===== */
+/* bande du HAUT */
+.shape.ninth-top::before{
+  clip-path: polygon(   
+    33.3333%  8.3333%,  /* P1 */
+    83.3333% 33.3333%,  /* Q1 */
+    66.6667% 41.6667%,  /* Q2 */
+    16.6667% 16.6667%   /* P2 */
+    );
+  border:1px solid #2222;
 }
-
-/* pour que les rotations restent centrées */
-.shape.edge { transform-origin: 50% 50%; }
+/* bande du MILIEU (passe par le centre) */
+.shape.ninth-mid::before{
+  clip-path: polygon(
+    66.6667%  8.3333%,  /* P1'  miroir de (33.3333, 8.3333) */
+    16.6667% 33.3333%,  /* Q1'  miroir de (83.3333, 33.3333) */
+    33.3333% 41.6667%,  /* Q2'  miroir de (66.6667, 41.6667) */
+    83.3333% 16.6667%   /* P2'  miroir de (16.6667, 16.6667) */
+  );
+  border:1px solid #2222;
+}
+/* bande du BAS */
+.shape.ninth-bot::before{
+  clip-path: polygon(
+    41.6667% 41.6667%,
+    75.0000% 41.6667%,
+    91.6667% 25.0000%,
+    58.3333% 25.0000%
+  );
+  border:1px solid #2222;
+}

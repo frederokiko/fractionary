@@ -1,5 +1,6 @@
 <section class="game-wrap">
-  <pb-shape-palette (choose)="onChoose($event)"></pb-shape-palette>
+  <!-- <pb-shape-palette (choose)="onChoose($event)"></pb-shape-palette> -->
+   <pb-shape-palette animal="cat" (choose)="onChoose($event)"></pb-shape-palette>
   <pb-puzzle-canvas [puzzle]="puzzle"></pb-puzzle-canvas>
 </section>
 
