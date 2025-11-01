@@ -13,8 +13,8 @@ export const BIRD_REFERENCE: ReferenceSet = {
     //'ninth-top':{ label: '1/9',  value: 0.111,  color: '#6A4CFF', clip: 'triangle' },
     //'ninth-bot':{ label: '1/9',  value: 0.111,  color: '#6A4CFF', clip: 'triangle' },
     //'ninth-mid':{ label: '1/9',  value: 0.111,  color: '#7E57C2', clip: 'parallelogram' },
-    twelfthd:   { label: '1/12', value: 0.083,  color: '#67C1E8', clip: 'small-tri-right' },
-    twelfthg:   { label: '1/12', value: 0.083,  color: '#4FC3F7', clip: 'small-tri-left' },
+    twelfthg:   { label: '1/12', value: 0.083,  color: 'rgb(241,154,190)', clip: 'small-tri-left' },
+    twelfthd:   { label: '1/12', value: 0.083,  color: 'rgb(241,154,190)', clip: 'small-tri-right' },
     //eighteenth: { label: '1/18', value: 0.055,  color: '#AB47BC', clip: 'thin-para' },
   }
 };

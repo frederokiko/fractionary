@@ -99,7 +99,7 @@ export class GameService {
     this.placed.clear();
 
     // Après 3s d'affichage mémorisation → jeu
-    setTimeout(() => (this.state = 'play'), 3000);
+    setTimeout(() => (this.state = 'play'), 5000);
   }
 
   /** Tentative de placement : on compare la fraction demandée avec le choix du joueur */

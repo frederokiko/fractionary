@@ -7,14 +7,14 @@ export const CAT_PUZZLE: PuzzleDefinition = {
     // //y=hauteur    
     // //x=largeur
     // tête
-    { id:'head', kind:'unit', x:22.5, y:67, r:0, color:'rgb(239,154,72)' },
+    { id:'head', kind:'unit', x:22.5, y:67, r:0, color:'rgb(239,154,72)' },//ok
     // oreilles droite 
     //1/12 compposées de 2 parts (1/12d et 1/12g)
-    { id:'ear-r-0', kind:'twelfthg', x:29, y:78, r:90, color:'rgb(241,154,190)' },
-    { id:'ear-r-1', kind:'twelfthg', x:29, y:40, r:160, color:'rgba(241,154,190)' },
-    //orilles gauche
-    { id:'ear-l-0', kind:'twelfthd', x:28, y:55, r:180, color:'rgb(241,154,190)' },
-    { id:'ear-l-1', kind:'twelfthg', x:35, y:20, r:180, color:'rgb(241,154,190)' },
+    { id:'ear-r-0', kind:'twelfthd', x:27.8, y:55, r:30, color:'rgb(241,154,190)' },//ok
+    { id:'ear-r-1', kind:'twelfthg', x:27.8, y:55, r:30, color:'rgb(241,154,190)' },//ok
+    //oreilles gauche
+    { id:'ear-l-0', kind:'twelfthd', x:17.3, y:55, r:-30, color:'rgb(241,154,190)' },//ok
+    { id:'ear-l-1', kind:'twelfthg', x:17.3, y:55, r:-30, color:'rgb(241,154,190)' },//ok
     //corps 
     //1/1 2fois
     //1er a gauche
@@ -24,33 +24,33 @@ export const CAT_PUZZLE: PuzzleDefinition = {
     //1/2 2fois
     { id:'body-2', kind:'half', x:45, y:71.5, r:-30, color:'rgb(0,70,142)' },//ok
     { id:'body-3', kind:'half', x:39, y:71.5, r:210, color:'rgb(0,70,142)' },//ok
-    //1/12 gauche 2fois centre du corps
-    { id:'body-4', kind:'twelfthg', x:36, y:78.5, r:150, color:'rgb(241,154,190)' },//ok
-    { id:'body-5', kind:'twelfthd', x:36, y:78.5, r:150, color:'rgb(241,154,190)' },//ok
+    //1/12 gauche 2fois centre du corps bas
+    { id:'body-4', kind:'twelfthg', x:36, y:78.5, r:0, color:'rgb(241,154,190)' },//ok
+    { id:'body-5', kind:'twelfthd', x:36, y:78.5, r:0, color:'rgb(241,154,190)' },//ok
     //1/12 droite 3fois
     //cou
-    { id:'body-6', kind:'twelfthd', x:27.1, y:71.4, r:210, color:'rgb(241,154,190)' },//a verifier
+    { id:'body-6', kind:'twelfthd', x:27, y:71.6, r:60, color:'rgb(241,154,190)' },//a verifier
     //dos du chat
-    { id:'body-7', kind:'twelfthd', x:42, y:64.5, r:150, color:'rgb(241,154,190)' },//ok
-    { id:'body-8', kind:'twelfthg', x:42, y:64.5, r:150, color:'rgb(241,154,190)' },//ok
+    { id:'body-7', kind:'twelfthd', x:42, y:64.7, r:0, color:'rgb(241,154,190)' },//ok
+    { id:'body-8', kind:'twelfthg', x:42, y:64.7, r:0, color:'rgb(241,154,190)' },//ok
     //pattes avant
     //1/9 2
     // //y=hauteur    
     // //x=largeur
-    { id:'front-leg-0', kind:'ninth-mid', x:25, y:90, r:30, color:'rgb(122,64,118)' },
-    { id:'front-leg-1', kind:'ninth-mid', x:22, y:88, r:30, color:'rgb(122,64,118)' },
+    { id:'front-leg-0', kind:'ninth-mid', x:25, y:90, r:60, color:'rgb(122,64,118)' },//ok
+    { id:'front-leg-1', kind:'ninth-mid', x:22, y:88, r:60, color:'rgb(122,64,118)' },//ok
     //pattes arrières
     //1/9 1fois et 1/12 1fois
-    { id:'back-leg-0', kind:'ninth-mid', x:35.8, y:91.2, r:30, color:'rgb(122,64,118)' },
-    { id:'back-leg-1', kind:'twelfthg', x:45.5, y: 85.5, r:210, color:'rgb(241,154,190)' },//je travaille ici
+    { id:'back-leg-0', kind:'ninth-mid', x:35.8, y:91.2, r:60, color:'rgb(122,64,118)' },//ok
+    { id:'back-leg-1', kind:'twelfthg', x:45.3, y: 85.5, r:60, color:'rgb(241,154,190)' },//ok
     //queue
-    // 1/9 gauche 2
-    { id:'tail-0', kind:'ninth-mid', x:52, y:78.5, r:-30, color:'rgb(122,64,118)' },//je travaille ici
-    { id:'tail-1', kind:'ninth-mid', x:80, y:90, r:270, color:'rgb(122,64,118)' },
+    // 1/9 gauche 2 on commece par le bas de la queue en remontant
+    { id:'tail-0', kind:'ninth-mid', x:51.9, y:78.4, r:0, color:'rgb(122,64,118)' },//ok
+    { id:'tail-1', kind:'ninth-top', x:48.9, y:71.5, r:0, color:'rgb(122,64,118)' },//ok
     // 1/9 droite 3fois
-    { id:'tail-2', kind:'ninth-mid', x:80, y:93, r:270, color:'rgb(122,64,118)' },
-    { id:'tail-3', kind:'ninth-mid', x:80, y:94, r:270, color:'rgb(122,64,118)' },
-    { id:'tail-4', kind:'ninth-mid', x:80, y:96, r:270, color:'rgb(122,64,118)' },   
+    { id:'tail-2', kind:'ninth-top', x:45.9, y:64.5, r:0, color:'rgb(122,64,118)' },//ok
+    { id:'tail-3', kind:'ninth-mid', x:41.9, y:60, r:60, color:'rgb(122,64,118)' },
+    { id:'tail-4', kind:'ninth-mid', x:35.9, y:60, r:60, color:'rgb(122,64,118)' },   
 ]
 };
 

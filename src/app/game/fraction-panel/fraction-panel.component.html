@@ -1,7 +1,23 @@
 <!-- src/app/game/fraction-panel/fraction-panel.component.html -->
-<ng-container *ngIf="game.state!=='win'; else gg">
+
+
+<!-- <ng-container *ngIf="game.state!=='win'; else gg">
   <strong>Fraction :</strong>
   <span class="frac" *ngIf="game.currentFraction as k">{{ game.getFractionLabel(k) }}</span>
 </ng-container>
-<ng-template #gg><strong>Terminé ✔</strong></ng-template>
+<ng-template #gg><strong>Terminé ✔</strong></ng-template> -->
 
+
+
+
+<ng-container *ngIf="game.state !== 'win'; else gg">
+  <div class="fraction-card" *ngIf="game.currentFraction as k" [style.--accent]="colorFor(k)">
+    <div class="figure">
+      <img [src]="cardSrc" />
+      <span class="num">{{ numerator(k) }}</span>
+      <span class="den">{{ denominator(k) }}</span>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #gg><strong>Terminé ✔</strong></ng-template>
