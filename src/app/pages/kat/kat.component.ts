@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CAT_PUZZLE } from '../../puzzles/cat';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GameService } from '../../core/game.service';
 import { ShapeKind } from '../../core/models';
+import { CAT_PUZZLE } from '../../puzzles/cat';
+import { ShapeBankComponent } from '../../game/shape-bank/shape-bank.component';
+import { BankItem } from '../../game/shape-bank/shape-bank.component';
 
 @Component({
   selector: 'app-kat',
@@ -10,24 +12,37 @@ import { ShapeKind } from '../../core/models';
   standalone: false,
 })
 export class KatComponent implements OnInit {
+
   puzzle = CAT_PUZZLE;
+
+  items: BankItem[] = [];
+  requiredByKey: Record<string, number> = {};
+  consumedByKey: Record<string, number> = {};
+
   constructor(public game: GameService) {}
-  //ngOnInit() { this.game.start(this.puzzle); }   
+
   ngOnInit() {
-  this.game.setReference('cat');
-  this.game.start(this.puzzle);
-}
+    this.game.setReference('cat');
+    this.game.start(this.puzzle);
 
-  onChoose(kind: ShapeKind) {
-    const { ok } = this.game.tryPlace(this.puzzle, kind);
-    // Si erreur => petite animation
-    if (!ok) this.shake();
+    this.items = this.game.getBankGroups(this.puzzle);
+    this.requiredByKey = this.game.requiredCountByKey(this.puzzle);
+    this.refreshConsumed();
   }
 
-  shake() {
-    const root = document.querySelector('.game-wrap');
-    if (!root) return;
-    root.classList.add('shake');
-    setTimeout(()=>root.classList.remove('shake'), 400);
+  refreshConsumed() {
+    this.consumedByKey = this.game.placedCountByKey(this.puzzle);
+  }
+
+  onPickFromBank(key: string) {
+    const it = this.items.find(x => x.key === key);
+    if (!it) return;
+    const result = this.game.tryPlace(this.puzzle, it.kind);
+    if (result.ok) this.refreshConsumed();
+  }
+
+  get total(): number {
+    return this.puzzle.shapes.filter(s => this.game.hasKind(s.kind)).length;
   }
 }
+

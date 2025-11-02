@@ -14,6 +14,8 @@ import { ShapeComponent } from './shared/shape/shape.component';
 import { PuzzleCanvasComponent } from './game/puzzle-canvas/puzzle-canvas.component';
 import { FractionPanelComponent } from './game/fraction-panel/fraction-panel.component';
 import { ShapePaletteComponent } from './game/shape-palette/shape-palette.component';
+import { RocketProgressComponent } from './game/rocket-progress/rocket-progress.component';
+import { ShapeBankComponent } from './game/shape-bank/shape-bank.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ShapePaletteComponent } from './game/shape-palette/shape-palette.compon
     PuzzleCanvasComponent,
     FractionPanelComponent,
     ShapePaletteComponent,
+    RocketProgressComponent,
+    ShapeBankComponent,
   ],
   imports: [
     BrowserModule,         // <-- fournit CommonModule (NgIf, NgFor, NgClass)

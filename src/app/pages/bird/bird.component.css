@@ -10,3 +10,30 @@
   30%, 50%, 70% { transform: translateX(-8px); }
   40%, 60% { transform: translateX(8px); }
 }
+.board{
+  display:grid;
+  grid-template-columns: 80px 1fr 140px;   /* gauche | centre | droite */
+  grid-template-areas: "rocket main bank";
+  gap:18px; align-items:start; width:100%;
+}
+
+.rocket { grid-area: rocket; justify-self:center; }
+.main   { grid-area: main;   display:flex; flex-direction:column; gap:16px; align-items:center; }
+.bank   { grid-area: bank;   align-self:start; }
+.fireworks{
+  position:absolute; inset:0; margin:auto;
+  width:min(420px,60%); pointer-events:none;
+  filter:drop-shadow(0 8px 24px #0004);
+}
+/* Responsive: tout empilé */
+@media (max-width: 900px){
+  .board{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "rocket"
+      "bank"
+      "main";
+  }
+}
+
+

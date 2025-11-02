@@ -1,0 +1,28 @@
+.bank {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+
+.tile {
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .08s, opacity .2s;
+}
+
+.tile:active {
+  transform: scale(.95);
+}
+
+.tile.disabled {
+  opacity: .35;
+  pointer-events: none;
+}

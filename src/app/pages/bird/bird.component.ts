@@ -1,31 +1,46 @@
-import { Component } from '@angular/core';
-import { Bird_PUZZLE } from '../../puzzles/bird';
+import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../core/game.service';
-import { ShapeKind } from '../../core/models';
+import { Bird_PUZZLE } from '../../puzzles/bird';
+import { BankItem } from '../../game/shape-bank/shape-bank.component';
+
 @Component({
   selector: 'app-bird',
-  standalone: false,
   templateUrl: './bird.component.html',
-  styleUrl: './bird.component.css'
+  styleUrls: ['./bird.component.css'],
+  standalone: false,
 })
-export class BirdComponent {
+export class BirdComponent implements OnInit {
   puzzle = Bird_PUZZLE;
+
+  items: BankItem[] = [];
+  requiredByKey: Record<string, number> = {};
+  consumedByKey: Record<string, number> = {};
+
   constructor(public game: GameService) {}
-  //ngOnInit() { this.game.start(this.puzzle); }  
-ngOnInit() {
-  this.game.setReference('bird');
-  this.game.start(this.puzzle);
-}
-  onChoose(kind: ShapeKind) {
-    const { ok } = this.game.tryPlace(this.puzzle, kind);
-    // Si erreur => petite animation
-    if (!ok) this.shake();
+
+  ngOnInit() {
+    this.game.setReference('bird');
+    this.game.start(this.puzzle);
+
+    this.items = this.game.getBankGroups(this.puzzle);
+    this.requiredByKey = this.game.requiredCountByKey(this.puzzle);
+    this.refreshConsumed();
   }
 
-  shake() {
-    const root = document.querySelector('.game-wrap');
-    if (!root) return;
-    root.classList.add('shake');
-    setTimeout(()=>root.classList.remove('shake'), 400);
+  refreshConsumed() {
+    this.consumedByKey = this.game.placedCountByKey(this.puzzle);
+  }
+
+  onPickFromBank(key: string) {
+    const it = this.items.find(x => x.key === key);
+    if (!it) return;
+    const result = this.game.tryPlace(this.puzzle, it.kind);
+    if (result.ok) this.refreshConsumed();
+  }
+
+  get total(): number {
+    return this.puzzle.shapes.filter(s => this.game.hasKind(s.kind)).length;
   }
 }
+
+

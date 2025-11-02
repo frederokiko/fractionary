@@ -1,0 +1,4 @@
+/* centrer les onlets */
+.container.nav {
+  justify-content: center;
+}

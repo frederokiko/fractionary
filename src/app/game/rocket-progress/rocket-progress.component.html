@@ -1,0 +1,19 @@
+<div class="rp">
+  <div class="bar">
+    <div class="tick" *ngFor="let s of steps; index as i"
+         [style.bottom.%]="(i/(total-1||1))*100"
+         [class.filled]="i < current"></div>
+
+    <!-- La fusée (emoji pour le proto, remplaçable par une image) -->
+    <!-- <img class="rocket" src="assets/animations/fusée.webp" alt="rocket"> -->
+<img class="rocket"
+     [style.width.px]="rocketSize"
+     [style.bottom.%]="percent * 100"
+     [style.transform]="'translate(-50%, ' + rocketOffset + 'px)'"
+     src="assets/animations/fusée.webp"
+     alt="rocket">
+
+
+  <!-- <div class="count">{{current}} / {{total}}</div> -->
+</div>
+

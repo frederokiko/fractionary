@@ -1,0 +1,16 @@
+<div class="bank" [style.--size.px]="size">
+  <button
+    *ngFor="let it of items; trackBy: trackByKey"
+    type="button"
+    class="tile"
+    [class.disabled]="isDone(it.key)"
+    (click)="onPick(it.key)"
+  >
+    <pb-shape
+      [kind]="it.kind"
+      [color]="colorOf(it)"
+    ></pb-shape>
+  </button>
+</div>
+
+

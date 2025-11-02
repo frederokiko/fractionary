@@ -81,6 +81,7 @@ import { GameService } from '../../core/game.service';
 })
 export class ShapePaletteComponent implements OnInit {
   @Input() animal: 'cat' | 'bird' = 'cat';
+  @Input() readonly = false;
   @Output() choose = new EventEmitter<ShapeKind>();
   kinds: ShapeKind[] = [];
 
@@ -91,6 +92,7 @@ export class ShapePaletteComponent implements OnInit {
     this.kinds = this.game.getPaletteKinds();   // ← la liste vient du référentiel
   }
 
-  pick(k: ShapeKind) { this.choose.emit(k); }
+ // pick(k: ShapeKind) { this.choose.emit(k); }
+ pick(k: ShapeKind){ if(!this.readonly) this.choose.emit(k); }
 }
 

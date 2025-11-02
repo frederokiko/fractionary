@@ -1,6 +1,35 @@
-<section class="game-wrap">
-  <!-- <pb-shape-palette (choose)="onChoose($event)"></pb-shape-palette> -->
+<!-- <pb-shape-palette (choose)="onChoose($event)"></pb-shape-palette> -->
+<!-- <section class="game-wrap">
    <pb-shape-palette animal="cat" (choose)="onChoose($event)"></pb-shape-palette>
   <pb-puzzle-canvas [puzzle]="puzzle"></pb-puzzle-canvas>
+</section> -->
+
+<section class="board">
+  <!-- Colonne 1 : fusée -->
+  <pb-rocket-progress class="rocket"
+    [total]="total"
+    [current]="game.placed.size">
+  </pb-rocket-progress>
+
+  <!-- Colonne 2 : banque cliquable -->
+<pb-shape-bank
+  [items]="items"
+  [requiredByKey]="requiredByKey"
+  [consumedByKey]="consumedByKey"
+  [size]="90"
+  (pick)="onPickFromBank($event)"
+></pb-shape-bank>
+
+
+  <!-- Colonne 3 : référentiel non-cliquable + puzzle -->
+  <div class="main">
+    <pb-shape-palette animal="cat" [readonly]="true"></pb-shape-palette>
+    <pb-puzzle-canvas [puzzle]="puzzle"></pb-puzzle-canvas>
+
+    <img *ngIf="game.state==='win'"
+         class="fireworks"
+         src="assets/animations/fireworks.gif"
+         alt="Bravo !" />
+  </div>
 </section>
 
