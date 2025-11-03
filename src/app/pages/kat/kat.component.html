@@ -10,18 +10,7 @@
     [total]="total"
     [current]="game.placed.size">
   </pb-rocket-progress>
-
-  <!-- Colonne 2 : banque cliquable -->
-<pb-shape-bank
-  [items]="items"
-  [requiredByKey]="requiredByKey"
-  [consumedByKey]="consumedByKey"
-  [size]="90"
-  (pick)="onPickFromBank($event)"
-></pb-shape-bank>
-
-
-  <!-- Colonne 3 : référentiel non-cliquable + puzzle -->
+  <!-- Colonne 2 : référentiel non-cliquable + puzzle -->
   <div class="main">
     <pb-shape-palette animal="cat" [readonly]="true"></pb-shape-palette>
     <pb-puzzle-canvas [puzzle]="puzzle"></pb-puzzle-canvas>
@@ -31,5 +20,14 @@
          src="assets/animations/fireworks.gif"
          alt="Bravo !" />
   </div>
+  <!-- Colonne 3 : banque cliquable -->
+  <pb-shape-bank
+    class="bank"
+    [items]="items"
+    [requiredByKey]="requiredByKey"
+    [consumedByKey]="consumedByKey"
+    [size]="90"
+    (pick)="onPickFromBank($event)">
+  </pb-shape-bank>
 </section>
 

@@ -1,38 +1,45 @@
-.game-wrap { display: grid; gap: 16px; }
-@media (min-width: 900px){
-  .game-wrap { grid-template-columns: 1fr; }
-}
-/* petit effet "mauvaise réponse" */
-.shake { animation: shake 0.4s; }
-@keyframes shake {
-  10%, 90% { transform: translateX(-2px); }
-  20%, 80% { transform: translateX(4px); }
-  30%, 50%, 70% { transform: translateX(-8px); }
-  40%, 60% { transform: translateX(8px); }
-}
+/* --- grille --- */
 .board{
   display:grid;
-  grid-template-columns: 80px 120px 1fr; /* fusée | banque | jeu */
-  grid-template-areas: "rocket bank main";
-  gap:18px; align-items:start; width:100%;
+  grid-template-columns: 80px 1fr 140px; /* fusée | puzzle | banque */
+  grid-template-areas: "rocket main bank";
+  gap:18px;
+  align-items:start;
+  width:100%;
 }
 .rocket { grid-area: rocket; justify-self:center; }
-.bank   { grid-area: bank;   align-self:start; }
 .main   { grid-area: main;   display:flex; flex-direction:column; gap:16px; align-items:center; }
+.bank   { grid-area: bank;   align-self:center; }
 
+/* --- fireworks --- */
 .fireworks{
   position:absolute; inset:0; margin:auto;
   width:min(420px,60%); pointer-events:none;
   filter:drop-shadow(0 8px 24px #0004);
 }
 
+/* --- responsive --- */
 @media (max-width: 900px){
   .board{
     grid-template-columns: 1fr;
     grid-template-areas:
       "rocket"
-      "bank"
-      "main";
+      "main"
+      "bank";
   }
 }
+
+/* --- animation shake --- */
+@keyframes pb-shake {
+  10%, 90%  { transform: translateX(-2px); }
+  20%, 80%  { transform: translateX( 4px); }
+  30%, 50%, 70% { transform: translateX(-8px); }
+  40%, 60%  { transform: translateX( 8px); }
+}
+.board.shake {
+  animation: pb-shake 0.35s ease;
+  box-shadow: 0 0 0 2px rgba(244,67,54,.15) inset; /* halo léger */
+}
+
+
 

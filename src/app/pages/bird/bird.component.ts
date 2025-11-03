@@ -31,15 +31,35 @@ export class BirdComponent implements OnInit {
     this.consumedByKey = this.game.placedCountByKey(this.puzzle);
   }
 
+  // onPickFromBank(key: string) {
+  //   const it = this.items.find(x => x.key === key);
+  //   if (!it) return;
+  //   const result = this.game.tryPlace(this.puzzle, it.kind);
+  //   if (result.ok) this.refreshConsumed();
+  // }
   onPickFromBank(key: string) {
-    const it = this.items.find(x => x.key === key);
-    if (!it) return;
-    const result = this.game.tryPlace(this.puzzle, it.kind);
-    if (result.ok) this.refreshConsumed();
+  const it = this.items.find(x => x.key === key);
+  if (!it) return;
+  const result = this.game.tryPlace(this.puzzle, it.kind);
+  if (result.ok) {
+    this.refreshConsumed();
+  } else {
+    this.shake(); // ← feedback erreur
   }
+}
 
   get total(): number {
     return this.puzzle.shapes.filter(s => this.game.hasKind(s.kind)).length;
+  }
+   /** Petite animation d’erreur */
+   shake() {
+    const host = document.querySelector('.board');
+    if (!host) return;
+    host.classList.remove('shake');
+    // @ts-ignore
+    void (host as HTMLElement).offsetWidth;
+    host.classList.add('shake');
+    setTimeout(() => host.classList.remove('shake'), 400);
   }
 }
 
