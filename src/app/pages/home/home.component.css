@@ -112,9 +112,17 @@
 }
 */
 
+.explications {
+  font-weight: bold; /*Texte en gras*/
+  text-decoration: underline; /*Texte souligné*/
+}
 
-
-
+.infoformes {
+  margin-top: 20px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: blue;
+}
 
 /* CADRE UNIQUE pour toutes les formes */
 .shape {
@@ -143,7 +151,7 @@
   gap: 10px;         /* petit espace entre les formes 
   justify-content: center; /* centrer horizontalement 
   align-items: center;     /* aligner verticalement 
-  padding: 20px;
+  padding: 20px;    
   overflow-x: auto;   /* utile si ça dépasse la largeur de l’écran */
 }
 
@@ -245,4 +253,37 @@
     58.3333% 25.0000%
   );
   border:1px solid #2222;
+}
+
+.infoformes p {
+  margin-left: 30px;
+}
+
+.container-colonnes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colonnes égales */
+  text-align: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.ImageHomeVisuel{
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* ou contain */
+  border-radius: 10px;
+  margin: 25px; /* 25 pixels de marge partout */
+}
+
+.finacceuil {
+  font-weight: bold; /*Met le texte en gras*/
+  font-size: 125%;
+}
+
+.container-colonnes a {
+  margin-left: -50px;
+}
+
+.container-colonnes p {
+  margin-left: -50px;
 }
