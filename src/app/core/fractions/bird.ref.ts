@@ -4,7 +4,7 @@ export const BIRD_REFERENCE: ReferenceSet = {
   name: 'bird',
   baseUnitLabel: '1',
   shapes: {
-    unit:       { label: '1',    value: 1,      color: '#F7901E', clip: 'hexagon' },
+    unit:       { label: '1/1',    value: 1,      color: '#F7901E', clip: 'hexagon' },
     //half:       { label: '1/2',  value: 0.5,    color: '#1E63D8', clip: 'trapezoid' },
     third:      { label: '1/3',  value: 0.333,  color: '#E53935', clip: 'diamond' },
     //quarterd:   { label: '1/4',  value: 0.25,   color: '#2E7D32', clip: 'trap-right' },

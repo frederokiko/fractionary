@@ -4,7 +4,7 @@ export const CAT_REFERENCE: ReferenceSet = {
   name: 'cat',
   baseUnitLabel: '1',
   shapes: {
-    unit:       { label: '1',    value: 1,      color: 'rgb(239,154,72)', clip: 'hexagon' },
+    unit:       { label: '1/1',    value: 1,      color: 'rgb(239,154,72)', clip: 'hexagon' },
     half:       { label: '1/2',  value: 0.5,    color: 'rgb(0,70,142)', clip: 'trapezoid' },
     //third:      { label: '1/3',  value: 0.333,  color: '#E53935', clip: 'diamond' },
     //quarterd:   { label: '1/4',  value: 0.25,   color: '#2E7D32', clip: 'trap-right' },

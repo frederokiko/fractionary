@@ -1,4 +1,5 @@
-.palette { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; padding: 10px; }
-button { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 8px; cursor: pointer; }
-button:active { transform: scale(0.98); }
-small { display: block; text-align: center; margin-top: 4px; color:#555; }
+.palette { display: flex; gap: 10px; flex-wrap:nowrap; justify-content:center; padding: 10px;border: none;}
+button { background: #fff; border: none #ddd; border-radius: 12px; padding: 8px;  }
+/*border: 1px solid #ddd; et pointer */
+/* button:active { transform: scale(0.98); } */
+small {font-size:x-large ; display: block; text-align: center; margin-top: 4px; color:#080808; }

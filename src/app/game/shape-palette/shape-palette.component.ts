@@ -70,7 +70,7 @@ import { GameService } from '../../core/game.service';
   selector: 'pb-shape-palette',
   template: `
   <div class="palette">
-    <button *ngFor="let k of kinds" (click)="pick(k)">
+    <button *ngFor="let k of list" (click)="pick(k)">
       <pb-shape [kind]="k" [color]="game.getColor(k)"></pb-shape>
       <small>{{ game.getFractionLabel(k) }}</small>
       <!-- libellé/ couleur viennent du référentiel actif -->
@@ -84,12 +84,17 @@ export class ShapePaletteComponent implements OnInit {
   @Input() readonly = false;
   @Output() choose = new EventEmitter<ShapeKind>();
   kinds: ShapeKind[] = [];
-
+  list: ShapeKind[] = [];
   constructor(public game: GameService) {}
 
   ngOnInit() {
     this.game.setReference(this.animal);
-    this.kinds = this.game.getPaletteKinds();   // ← la liste vient du référentiel
+    this.kinds = this.game.getPaletteKinds(); 
+    if (this.animal === 'bird') {
+      this.list = ['unit','third','twelfthd'];
+    } else{
+      this.list =['unit','half','ninth-mid','twelfthd'];
+    }// ← la liste vient du référentiel
   }
 
  // pick(k: ShapeKind) { this.choose.emit(k); }

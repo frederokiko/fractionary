@@ -13,7 +13,7 @@
 .rocket {
   height: auto;
   position: absolute;
-  left: -200%;
+  left: 50%;
   transition: bottom .4s ease-in-out;
   pointer-events: none;
   max-width: none; /* au cas où d’autres styles limiterait la taille */

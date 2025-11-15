@@ -1,6 +1,7 @@
 /* CADRE UNIQUE pour toutes les formes */
+/* h etait a 85px avant */
 .shape {
-  --h: 85px;                                       /* hauteur hexagone */
+  --h: 130px;                                       /* hauteur hexagone */
   --w: calc(var(--h) * 0.8660254037844386);        /* √3/2 * hauteur */
   width: var(--w);
   height: var(--h);
@@ -15,6 +16,7 @@
   background: var(--c, #ddd);
   box-sizing:border-box;
   border: 1px solid #2222;                          
+
   clip-path: var(--path);                          
 }
 

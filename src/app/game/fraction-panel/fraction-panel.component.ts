@@ -3,75 +3,9 @@ import { GameService } from '../../core/game.service';
 
 @Component({
   selector: 'pb-fraction-panel',
-  template: `
-    <ng-container *ngIf="game.state !== 'win'; else gg">
-      <div class="fraction-card" *ngIf="game.currentKey as k" [style.--accent]="colorFor(k)">
-        <div class="figure">
-          <img [src]="cardSrc" alt="Carte fraction" />
-          <span class="num">{{ numerator(k) }}</span>
-          <span class="den">{{ denominator(k) }}</span>
-        </div>
-      </div>
-    </ng-container>
+  templateUrl: `./fraction-panel.component.html`,     
+  styleUrls: ['./fraction-panel.component.css'],
 
-    <ng-template #gg>
-      <div class="win">Bravo !</div>
-    </ng-template>
-  `,
-  styles: [`
-    .win { font-weight: 700; }
-
-    .fraction-card {
-      /* conteneur de la carte */
-      display: inline-block;
-      padding: 8px 10px;
-      border-radius: 10px;
-      background: #fff;
-      box-shadow: 0 6px 16px rgba(0,0,0,.12);
-    }
-
-    .figure {
-      position: relative;
-      width: 110px;
-      height: 140px;
-    }
-      
-    .figure img {
-      display: block;
-      width: 100%;
-      height: auto;
-      user-select: none;
-      pointer-events: none;
-    }
-
-    .num{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 55px;
-      font-weight: 700;
-      line-height: 1;
-      color: #f3f3f3ff;
-      text-shadow: 0 1px 0 #680404a0;
-  
-    }
-    .num { top: 12%; }
-    
-
-
-      .den {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 30px;
-      font-weight: 700;
-      line-height: 1;
-      color: #e2d40aff;
-      text-shadow: 0 1px 0 #ffffffa0;
-    }
-
-    .den { bottom: 8%; }
-  `],
   standalone: false,
 })
 export class FractionPanelComponent {
@@ -99,16 +33,17 @@ export class FractionPanelComponent {
   numerator(k: string) { return this.toText(k).split('/')[0] ?? ''; }
   denominator(k: string) { return this.toText(k).split('/')[1] ?? ''; }
 
-  colorFor(k: string): string {
-    const map: Record<string, string> = {
-      unit:'#EB8F2D', half:'#0D47A1', third:'#0D47A1',
-      quarterd:'#0D47A1', quarterg:'#0D47A1', sixth:'#0D47A1',
-      twelfthd:'#F48FB1', twelfthg:'#F48FB1',
-      'ninth-top':'#5C2D91', 'ninth-mid':'#5C2D91',
-      eighteenth:'#5C2D91',
-    };
-    return map[k] ?? '#333';
-  }
+colorFor(k: string): string {
+  const map: Record<string, string> = {
+    '1/1':'#EB8F2D', '1/2':'#0D47A1', '1/3':'#D32F2F',
+    quarterd:'#0D47A1', quarterg:'#0D47A1', sixth:'#0D47A1',
+    '1/12':'#F48FB1', twelfthg:'#F48FB1',
+    '1/9':'#5C2D91', 'ninth-mid':'#5C2D91',
+    eighteenth:'#5C2D91',
+  };
+  return map[k] ?? '#000';  // couleur par défaut
 }
+  }
+
 
 

@@ -1,23 +1,17 @@
-<!-- src/app/game/fraction-panel/fraction-panel.component.html -->
-
-
-<!-- <ng-container *ngIf="game.state!=='win'; else gg">
-  <strong>Fraction :</strong>
-  <span class="frac" *ngIf="game.currentFraction as k">{{ game.getFractionLabel(k) }}</span>
-</ng-container>
-<ng-template #gg><strong>Terminé ✔</strong></ng-template> -->
-
-
-
-
 <ng-container *ngIf="game.state !== 'win'; else gg">
-  <div class="fraction-card" *ngIf="game.currentFraction as k" [style.--accent]="colorFor(k)">
+  <div class="fraction-card" *ngIf="game.currentKey as k">
     <div class="figure">
-      <img [src]="cardSrc" />
+      <img [src]="cardSrc" alt="Carte fraction" />
       <span class="num">{{ numerator(k) }}</span>
-      <span class="den">{{ denominator(k) }}</span>
+
+      <!-- couleur appliquée directement à partir de colorFor -->
+      <span class="den" [style.color]="colorFor(k)">
+        {{ denominator(k) }}
+      </span>
     </div>
   </div>
 </ng-container>
 
-<ng-template #gg><strong>Terminé ✔</strong></ng-template>
+<ng-template #gg>
+  <div class="win">Bravo !</div>
+</ng-template>
