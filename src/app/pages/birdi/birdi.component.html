@@ -1,0 +1,29 @@
+<p>birdi works!</p>
+<section class="board">
+  <!-- Colonne 1 : fusée -->
+  <pb-rocket-progress class="rocket"
+    [total]="total"
+    [current]="game.placed.size">
+  </pb-rocket-progress>
+  <!-- Colonne 2 : référentiel non-cliquable + puzzle -->
+  <div class="main">
+    <pb-shape-palette-b animal="bird" [readonly]="true"></pb-shape-palette-b>
+    <pb-puzzle-canvase [puzzle]="puzzle"></pb-puzzle-canvase>
+
+    <img *ngIf="game.state==='win'"
+         class="fireworks"
+         src="assets/animations/fireworks.gif"
+         alt="Bravo !" />
+  </div>
+    <!-- Colonne 3 : banque cliquable -->
+  <pb-shape-bank
+    class="bank"
+    [items]="items"
+    [requiredByKey]="requiredByKey"
+    [consumedByKey]="consumedByKey"
+    
+    [size]="135"
+
+    (pick)="onPickFromBank($event)">
+  </pb-shape-bank>
+</section>

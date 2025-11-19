@@ -15,7 +15,7 @@
   inset:0;
   background: var(--c, #ddd);
   box-sizing:border-box;
-  border: 1px solid #2222;                          
+  border: 0px solid #2222;                          
 
   clip-path: var(--path);                          
 }
@@ -36,19 +36,18 @@
 /* 1/3 : losange (A–B–O–F) */
 .shape.third::before {
   --path: polygon(50% 0%, 100% 25%, 50% 50%, 0% 25%);
+ 
 }
 
 
 /* 1/4 côté droit : A → B → milieu(BC) → O */
 .shape.quarterd::before{
   clip-path: polygon(50% 0%, 100% 25%, 100% 50%, 50% 50%);
-  border: 1px solid #2222;
 }
 
 /* 1/4 côté gauche (MIROIR) : A → F → milieu(FE) → O */
 .shape.quarterg::before{
   clip-path: polygon(50% 0%, 0% 25%, 0% 50%, 50% 50%);
-  border: 1px solid #2222;
 }
 /* 1/6 : triangle A–B–O */
 .shape.sixth::before {
@@ -59,21 +58,18 @@
 /* 1/12 “côté A” (A–Mab–O) */
 .shape.twelfthd::before{
   clip-path:polygon(50% 0%, 75% 12.5%, 50% 50%);
-  transform: rotate(150deg);
-  border:1px solid #2222;
+  transform: rotate(150deg); 
 }
 
 /* 1/12 “côté B” (B–Mab–O) → MIRROR exact */
 .shape.twelfthg::before{
   clip-path:polygon(100% 25%, 75% 12.5%, 50% 50%);
   transform: rotate(150deg);
-  border:1px solid #2222;
 }
 
 /* 1/18 (triangle 120°/30°/30°) — coordonnées OK */
 .shape.eighteenth::before{
   clip-path: polygon(50% 0%, 78.8675% 14.4338%, 21.1325% 14.4338%);
-  border:1px solid #2222;
 }
 /* >>> ancrer la rotation sur le sommet A de l'hexagone (50% 0%) */
 .shape.eighteenth { 
@@ -95,7 +91,6 @@
     16.6667% 16.6667%   /* P2 */
     );
   transform: rotate(30deg);
-  border:1px solid #2222;
 }
 /* bande du MILIEU (passe par le centre) */
 .shape.ninth-mid::before{
@@ -116,5 +111,4 @@
     91.6667% 25.0000%,
     58.3333% 25.0000%
   );
-  border:1px solid #2222;
 }

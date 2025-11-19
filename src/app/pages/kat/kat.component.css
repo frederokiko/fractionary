@@ -9,7 +9,7 @@
 }
 .rocket { grid-area: rocket; justify-self:center; }
 .main   { grid-area: main;   display:flex; flex-direction:column; gap:16px; align-items:center; }
-.bank   { grid-area: bank;   align-self:center; }
+.bank   { grid-area: bank;   align-self:flex-end; }
 
 /* --- fireworks --- */
 .fireworks{

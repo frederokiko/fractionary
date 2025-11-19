@@ -16,6 +16,11 @@ import { FractionPanelComponent } from './game/fraction-panel/fraction-panel.com
 import { ShapePaletteComponent } from './game/shape-palette/shape-palette.component';
 import { RocketProgressComponent } from './game/rocket-progress/rocket-progress.component';
 import { ShapeBankComponent } from './game/shape-bank/shape-bank.component';
+import { BirdiComponent } from './pages/birdi/birdi.component';
+import { KataComponent } from './pages/kata/kata.component';
+import { PuzzleCanvaseComponent } from './game/puzzle-canvase/puzzle-canvase.component';
+import { FractionPaneleComponent } from './game/fraction-panele/fraction-panele.component';
+import { ShapePaletteBComponent } from './game/shape-palette-b/shape-palette-b.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +35,11 @@ import { ShapeBankComponent } from './game/shape-bank/shape-bank.component';
     ShapePaletteComponent,
     RocketProgressComponent,
     ShapeBankComponent,
+    BirdiComponent,
+    KataComponent,
+    PuzzleCanvaseComponent,
+    FractionPaneleComponent,
+    ShapePaletteBComponent,
   ],
   imports: [
     BrowserModule,         // <-- fournit CommonModule (NgIf, NgFor, NgClass)

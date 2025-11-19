@@ -1,0 +1,17 @@
+<ng-container *ngIf="game.state !== 'win'; else gg">
+  <div class="fraction-card" *ngIf="game.currentKey as k">
+    <div class="figure">
+      <img [src]="cardSrc" alt="Carte fraction" />
+      <span class="num">{{ numerator(k) }}</span>
+
+      <!-- couleur appliquée directement à partir de colorFor -->
+      <span class="den" [style.color]="colorFor(k)">
+        {{ denominator(k) }}
+      </span>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #gg>
+  <div class="win">Bravo !</div>
+</ng-template>
