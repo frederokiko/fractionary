@@ -1,8 +1,3 @@
-<!-- <pb-shape-palette (choose)="onChoose($event)"></pb-shape-palette> -->
-<!-- <section class="game-wrap">
-   <pb-shape-palette animal="cat" (choose)="onChoose($event)"></pb-shape-palette>
-  <pb-puzzle-canvas [puzzle]="puzzle"></pb-puzzle-canvas>
-</section> -->
 
 <section class="board">
   <!-- Colonne 1 : fusée -->
@@ -27,6 +22,7 @@
     [requiredByKey]="requiredByKey"
     [consumedByKey]="consumedByKey"
     [size]="140"
+    [errorKey]="errorKey"
     (pick)="onPickFromBank($event)">
   </pb-shape-bank>
 </section>

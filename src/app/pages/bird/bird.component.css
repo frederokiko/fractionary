@@ -1,15 +1,15 @@
 /* --- grille --- */
 .board{
   display:grid;
-  grid-template-columns: 80px 1fr 140px; /* fusée | puzzle | banque */
+  grid-template-columns: 60px 1fr 140px; /* fusée | puzzle | banque */
   grid-template-areas: "rocket main bank";
   gap:18px;
-  align-items:start;
+  align-items:center;
   width:100%;
 }
 .rocket { grid-area: rocket; justify-self:center; }
 .main   { grid-area: main;   display:flex; flex-direction:column; gap:16px; align-items:center; }
-.bank   { grid-area: bank;   align-self:flex-end; }
+.bank   { grid-area: bank;   align-self:flex; }
 
 /* --- fireworks --- */
 .fireworks{

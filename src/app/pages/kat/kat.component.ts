@@ -18,7 +18,7 @@ export class KatComponent implements OnInit {
   items: BankItem[] = [];
   requiredByKey: Record<string, number> = {};
   consumedByKey: Record<string, number> = {};
-
+  errorKey: string | null = null; 
   constructor(public game: GameService) {}
 
   ngOnInit() {
@@ -40,14 +40,35 @@ export class KatComponent implements OnInit {
   //   const result = this.game.tryPlace(this.puzzle, it.kind);
   //   if (result.ok) this.refreshConsumed();
   // }
+// onPickFromBank(key: string) {
+//   const it = this.items.find(x => x.key === key);
+//   if (!it) return;
+//   const result = this.game.tryPlace(this.puzzle, it.kind);
+//   if (result.ok) {
+//     this.refreshConsumed();
+//   } else {
+//     this.shake(); // ← feedback erreur
+//   }
+// }
 onPickFromBank(key: string) {
   const it = this.items.find(x => x.key === key);
   if (!it) return;
+
   const result = this.game.tryPlace(this.puzzle, it.kind);
+
   if (result.ok) {
     this.refreshConsumed();
+    this.errorKey = null;          // on efface l’éventuelle ancienne erreur
   } else {
-    this.shake(); // ← feedback erreur
+    this.errorKey = key;           // on marque cette tuile en erreur
+    this.shake();                  // effet shake global
+
+    // croix visible 1 seconde
+    setTimeout(() => {
+      if (this.errorKey === key) {
+        this.errorKey = null;
+      }
+    }, 1000);
   }
 }
   get total(): number {

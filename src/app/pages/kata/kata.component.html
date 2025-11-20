@@ -1,4 +1,4 @@
-<p>kata works!</p>
+
 <section class="board">
   <!-- Colonne 1 : fusée -->
   <pb-rocket-progress class="rocket"
@@ -16,12 +16,13 @@
          alt="Bravo !" />
   </div>
   <!-- Colonne 3 : banque cliquable -->
-  <pb-shape-bank
+   <pb-shape-bank
     class="bank"
     [items]="items"
     [requiredByKey]="requiredByKey"
     [consumedByKey]="consumedByKey"
     [size]="140"
+    [errorKey]="errorKey"
     (pick)="onPickFromBank($event)">
   </pb-shape-bank>
 </section>

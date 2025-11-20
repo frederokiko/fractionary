@@ -17,14 +17,21 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 55px;
+  font-size: 45px;
   font-weight: 700;
   line-height: 1;
   color: rgb(255, 255, 255);
   
   text-shadow: 0 1px 0 #680404a0;
+
+  animation: pulse 1.4s infinite ease-in-out;
+  }
+.num { top: 17%; }
+@keyframes pulse {
+  0%   { filter: drop-shadow(0 0 2px rgba(45, 18, 167, 0.5)); }
+  50%  { filter: drop-shadow(0 0 8px rgba(255,215,0,.9)); }
+  100% { filter: drop-shadow(0 0 2px rgba(187, 114, 5, 0.5)); }
 }
-.num { top: 12%; }
 
 .den {
   position: absolute;

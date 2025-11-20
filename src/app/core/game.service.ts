@@ -61,7 +61,7 @@ export class GameService {
     this.queueKeys = this.shuffle(keys);
     this.currentKey = this.queueKeys[0];
 
-    // Après 5s d'affichage mémorisation → jeu (tu avais 5000ms)
+    // Après 5s d'affichage mémorisation → jeu ( 5000ms)
     setTimeout(() => (this.state = 'play'), 5000);
   }
 

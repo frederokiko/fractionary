@@ -1,4 +1,4 @@
-<p>birdi works!</p>
+
 <section class="board">
   <!-- Colonne 1 : fusée -->
   <pb-rocket-progress class="rocket"
@@ -23,7 +23,7 @@
     [consumedByKey]="consumedByKey"
     
     [size]="135"
-
+    [errorKey]="errorKey"
     (pick)="onPickFromBank($event)">
   </pb-shape-bank>
 </section>

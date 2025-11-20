@@ -1,11 +1,43 @@
+
 <header class="site-header">
-  <div class="container nav">
-    <a routerLink="/"   routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">🏠</a>
-    <a routerLink="/bird" routerLinkActive="active">🦜0</a>
-    <a routerLink="/birdi" routerLinkActive="active">🦜1</a>
-    <a routerLink="/kat"  routerLinkActive="active">🐈0</a>
-    <a routerLink="/kata"  routerLinkActive="active">🐈1</a>
+<nav class="main-nav">
+  <a routerLink="/home" routerLinkActive="active" class="nav-item home">
+    🏠 <span>{{'nav.home' | t}}</span>
+  </a>
+
+  <a routerLink="/bird" routerLinkActive="active" class="nav-item bird">
+    🐦 <span>{{'nav.bird1' | t}}</span>
+  </a>
+
+  <a routerLink="/birdi" routerLinkActive="active" class="nav-item bird">
+    🐦 <span>{{'nav.bird2' | t}}</span>
+  </a>
+
+  <a routerLink="/kat" routerLinkActive="active" class="nav-item cat">
+    🐱 <span>{{'nav.cat1' | t}}</span>
+  </a>
+
+  <a routerLink="/kata" routerLinkActive="active" class="nav-item cat">
+    🐱 <span>{{'nav.cat2' | t}}</span>
+  </a>
+    <!-- ⬇⬇⬇ Les deux drapeaux à droite -->
+  <div class="lang-switch">
+    <button
+      type="button"
+      (click)="setLang('fr')"
+      [class.active]="currentLang === 'fr'">
+      <img src="assets/flags/french.png" alt="Français" />
+    </button>
+
+    <button
+      type="button"
+      (click)="setLang('en')"
+      [class.active]="currentLang === 'en'">
+      <img src="assets/flags/uk.png" alt="English" />
+    </button>
   </div>
+</nav>
+
 </header>
 
 <main class="site-main">

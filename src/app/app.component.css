@@ -2,3 +2,53 @@
 .container.nav {
   justify-content: center;
 }
+.main-nav {
+  justify-content: center;
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px;
+}
+
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+  background: #f3f4f6;
+}
+
+.nav-item.bird { background: #e3f2fd; } /* bleu clair */
+.nav-item.cat  { background: #fff3e0; } /* orange clair */
+
+.nav-item.active {
+  box-shadow: 0 0 0 2px #1e88e5 inset;
+  font-weight: 600;
+}
+
+
+.lang-switch {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-switch button {
+  border: none;
+  background: transparent;
+  padding: 2px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.lang-switch img {
+  width: 24px;
+  height: 16px;
+  display: block;
+}
+
+.lang-switch button.active {
+  box-shadow: 0 0 0 2px #1e88e5 inset;
+}

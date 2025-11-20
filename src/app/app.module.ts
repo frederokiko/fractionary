@@ -21,6 +21,7 @@ import { KataComponent } from './pages/kata/kata.component';
 import { PuzzleCanvaseComponent } from './game/puzzle-canvase/puzzle-canvase.component';
 import { FractionPaneleComponent } from './game/fraction-panele/fraction-panele.component';
 import { ShapePaletteBComponent } from './game/shape-palette-b/shape-palette-b.component';
+import { TranslatePipe } from './core/translate-pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ShapePaletteBComponent } from './game/shape-palette-b/shape-palette-b.c
     PuzzleCanvaseComponent,
     FractionPaneleComponent,
     ShapePaletteBComponent,
+    TranslatePipe,
   ],
   imports: [
     BrowserModule,         // <-- fournit CommonModule (NgIf, NgFor, NgClass)

@@ -3,14 +3,22 @@
     *ngFor="let it of items; trackBy: trackByKey"
     type="button"
     class="tile"
-    [class.disabled]="isDone(it.key)"
-    (click)="onPick(it.key)"
-  >
-    <pb-shape
-      [kind]="it.kind"
-      [color]="colorOf(it)"
-    ></pb-shape>
+    [class.disabled]="isAllDone()"
+    (click)="onPick(it.key)">
+
+    <div class="shape-wrap">
+      <pb-shape
+        [kind]="it.kind"
+        [color]="colorOf(it)">
+      </pb-shape>
+
+      <!-- Croix rouge par-dessus la forme en cas d’erreur -->
+      <span class="error-cross" *ngIf="errorKey === it.key">✖</span>
+    </div>
+
   </button>
 </div>
 
 
+
+ <!-- [class.disabled]="isDone(it.key)"    -->
