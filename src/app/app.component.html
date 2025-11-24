@@ -26,14 +26,42 @@
       type="button"
       (click)="setLang('fr')"
       [class.active]="currentLang === 'fr'">
-      <img src="assets/flags/french.png" alt="Français" />
+      <img src="assets/flags/french.png" alt="Français" title="Français" />
     </button>
 
     <button
       type="button"
       (click)="setLang('en')"
       [class.active]="currentLang === 'en'">
-      <img src="assets/flags/uk.png" alt="English" />
+      <img src="assets/flags/uk1.jpg" alt="English" title="English"/>
+    </button>
+
+    <button
+      type="button"
+      (click)="setLang('es')"
+      [class.active]="currentLang === 'es'">
+      <img src="assets/flags/es_1.png" alt="Spain" title="Spain"/>
+    </button>
+
+    <button
+      type="button"
+      (click)="setLang('de')"
+      [class.active]="currentLang === 'de'">
+      <img src="assets/flags/de.jpg" alt="Germany" title="Germany"/>
+    </button>
+
+    <button
+      type="button"
+      (click)="setLang('it')"
+      [class.active]="currentLang === 'it'">
+      <img src="assets/flags/it.png" alt="Italy" title="Italy"/>
+    </button>
+
+    <button
+      type="button"
+      (click)="setLang('nl')"
+      [class.active]="currentLang === 'nl'">
+      <img src="assets/flags/nl.png" alt="Netherlands" title="Netherlands"/>
     </button>
   </div>
 </nav>

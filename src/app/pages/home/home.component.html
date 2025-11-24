@@ -1,5 +1,5 @@
-<h1>Bienvenue</h1>
-<p class="explications">Vidéos : Remplir les plateaux oiseau et chat avec les blocs physiques.</p>
+<h1>{{'acceuil.home' | t}}</h1>
+<p class="explications">{{'videos' | t}}</p>
 
 
 
@@ -29,7 +29,7 @@
 
   <!-- FORMES UTILISER -->
 <p class="explications">
-  Voici les formes et les fractions que tu devras utiliser pour remplir tes plateaux dans les jeux vidéos :
+  {{'explications' | t}}
 </p>
 
 <div class="formes">
@@ -58,9 +58,9 @@
 <div class="infoformes">
   <div class="TITRE">
     <p class="explications">
-    Jeux vidéos :
+    {{'jeu' | t}}
     <br>
-    Objectif : Replacer les formes des fractions dans les plateaux.
+    {{'objectif' | t}}
     </p>
   </div>
 
@@ -68,28 +68,33 @@
   
 <div class="container-colonnes">
   <div>
-    <p>L'Oiseau</p>
-    <img class="ImageHomeVisuel" src="assets/images/Formeoiseau.png" alt="Forme de l'oiseau">
-    <a routerLink="/bird" >Lien vers le jeu du Bird</a>
+    <p>{{'bird' | t}}</p>
+    <img class="ImageHomeVisuel" src="assets/images/oiseau.PNG" alt="Forme de l'oiseau">
+    <a routerLink="/bird" >{{'nav.bird1' | t}}</a>
+    <br>
+    <a routerLink="/birdi" >{{'nav.bird2' | t}}</a>
   </div>
 
   <div>
-    <p class="jeux">Choisis ton plateau !<br>Bon jeu à toi !!!!</p>
+    <p class="jeux">{{'choix' | t}}<br>{{'bonjeu' | t}}</p>
   </div>
 
   <div>
-    <p>Le Chat</p>
-    <img class="ImageHomeVisuel" src="assets/images/FormeChat.jpg" alt="Forme du chat">
-    <a routerLink="kat">Lien vers le jeu du Chat</a>
+    <p>{{'cat' | t}}</p>
+    <img class="ImageHomeVisuel" src="assets/images/chat.PNG" alt="Forme du chat">
+    <a routerLink="kat">{{'nav.cat1' | t}}</a>
+    <br>
+    <a routerLink="kata">{{'nav.cat2' | t}}</a>
   </div>
 </div>
 
 
 <p class="finacceuil">
-  Lien vers le jeu final, évolutif, avec plusieurs niveaux :
-<a href=""><b>(EN COURS DE DEVELOPPEMENT)</b></a>
+  {{'dev' | t}}
+
+<!-- <a href=""><b>(EN COURS DE DEVELOPPEMENT)</b></a> -->
 <br>
 <br>
-  Ce jeu existe aussi en physique. Vous pouvez regarder ici sur
+  {{'lien' | t}}
 <a href="https://fractionary.be/"><b>https://fractionary.be</b></a>
 </p>

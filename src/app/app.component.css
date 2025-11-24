@@ -32,7 +32,7 @@
 
 .lang-switch {
   display: flex;
-  gap: 6px;
+  gap: 16px;
 }
 
 .lang-switch button {
