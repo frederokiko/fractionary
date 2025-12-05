@@ -21,7 +21,8 @@ fr: {
   'choix':'Choisis ton plateau !',
   'bonjeu':'Bon jeu à toi !!!!',
   'lien':'Ce jeu existe aussi en physique. Vous pouvez regarder ici ==>',
-  'dev':"Très prochainement le lien vers le jeu officiel , évolutif, avec plus de niveaux , de difficultés et plein d'autres surprises.",
+  'dev':"Prochainement , le lien vers une version boostée du jeu , avec plus de niveaux , plus de défis et un max de surprises !",
+  'nav.contact': 'Contact',
 },
 
 en: {
@@ -44,6 +45,7 @@ en: {
   'bonjeu':'Have fun playing!!!!',
   'lien':'This game also exists in physical form. You can watch here ==>',
   'dev':"Very soon the link to the official, evolving game, with more levels, difficulties and many other surprises.",
+  'nav.contact': 'Contact',
 },
 
 es: {
@@ -66,6 +68,7 @@ es: {
   'bonjeu':'¡Diviértete jugando!!!!',
   'lien':'Este juego también existe en forma física. Puedes ver aquí ==>',
   'dev':"Muy pronto el enlace al juego oficial, evolutivo, con más niveles, dificultades y muchas otras sorpresas.",
+  'nav.contact': 'Contacto',
 },
 
 de: {
@@ -88,6 +91,7 @@ de: {
   'bonjeu':'Viel Spaß beim Spielen!!!!',
   'lien':'Dieses Spiel gibt es auch in physischer Form. Du kannst hier zuschauen ==>',
   'dev':"Sehr bald der Link zum offiziellen, sich entwickelnden Spiel, mit mehr Levels, Schwierigkeitsgraden und vielen anderen Überraschungen.",
+  'nav.contact': 'Kontakt',
 },
 
 it: {
@@ -110,6 +114,7 @@ it: {
   'bonjeu':'Divertiti a giocare!!!!',
   'lien':'Questo gioco esiste anche in forma fisica. Puoi guardare qui ==>',
   'dev':"Molto presto il link al gioco ufficiale, evolutivo, con più livelli, difficoltà e molte altre sorprese.",
+  'nav.contact': 'Contatto',
 },
 
 nl: {
@@ -132,6 +137,7 @@ nl: {
   'bonjeu':'Veel speelplezier!!!!',
   'lien':'Dit spel bestaat ook in fysieke vorm. Je kunt hier kijken ==>',
   'dev':"Binnenkort de link naar het officiële, evoluerende spel, met meer niveaus, moeilijkheden en nog veel meer verrassingen.",
+  'nav.contact': 'Contact',
 },
 
 };

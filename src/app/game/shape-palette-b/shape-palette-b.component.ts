@@ -35,7 +35,7 @@ export class ShapePaletteBComponent implements OnInit {
       this.images = ['assets/images/1_1.PNG','assets/images/1_3.PNG','assets/images/1_12.PNG'];
     } else{
       this.list =['unit','half','ninth-mid','twelfthd'];
-      this.images = ['assets/images/1_1.PNG','assets/images/1_2.PNG','assets/images/1_9.PNG','assets/images/1_12.PNG'];
+      this.images = ['assets/images/1_1.PNG','assets/images/1_2_test.png','assets/images/1_9.PNG','assets/images/1_12.PNG'];
     }// ← la liste vient du référentiel
   }
 

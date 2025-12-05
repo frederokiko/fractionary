@@ -1,0 +1,140 @@
+
+<section class="contact-page">
+  <h1>Contact</h1>
+  <p>
+    Tu as une question, une idée ou un avis sur Fractionary ? Dis-le nous ici 😊
+  </p>
+
+  <form
+    action="https://formspree.io/f/xgvvraep"
+
+    method="POST"
+    class="contact-form"
+  >
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Ton e-mail *</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        required
+        placeholder="tonemail@example.com"
+      />
+    </div>
+
+    <!-- Commentaire -->
+    <div class="form-group">
+      <label for="message">Ton message / commentaire *</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        required
+        placeholder="Dis-nous ce que tu penses du site, du jeu, des idées d'amélioration..."
+      ></textarea>
+    </div>
+
+    <!-- Appréciation sur 5 étoiles -->
+    <h2>Ton avis sur le site</h2>
+
+    <div class="rating-section">
+      <!-- Design -->
+      <div class="rating-row">
+        <span>Design du site</span>
+        <div class="rating-options">
+          <label>
+            <input type="radio" name="design du site" value="1/5" required />
+            ★☆☆☆☆
+          </label>
+          <label>
+            <input type="radio" name="design du site" value="2/5" />
+            ★★☆☆☆
+          </label>
+          <label>
+            <input type="radio" name="design du site" value="3/5" />
+            ★★★☆☆
+          </label>
+          <label>
+            <input type="radio" name="design du site" value="4/5" />
+            ★★★★☆
+          </label>
+          <label>
+            <input type="radio" name="design du site" value="5/5" />
+            ★★★★★
+          </label>
+        </div>
+      </div>
+
+      <!-- Contenu pédagogique -->
+      <div class="rating-row">
+        <span>Contenu pédagogique</span>
+        <div class="rating-options">
+          <label>
+            <input type="radio" name="contenu pédagogique" value="1/5" required />
+            ★☆☆☆☆
+          </label>
+          <label>
+            <input type="radio" name="contenu pédagogique" value="2/5" />
+            ★★☆☆☆
+          </label>
+          <label>
+            <input type="radio" name="contenu pédagogique" value="3/5" />
+            ★★★☆☆
+          </label>
+          <label>
+            <input type="radio" name="contenu pédagogique" value="4/5" />
+            ★★★★☆
+          </label>
+          <label>
+            <input type="radio" name="contenu pédagogique" value="5/5" />
+            ★★★★★
+          </label>
+        </div>
+      </div>
+
+      <!-- Plaisir de jeu global -->
+      <div class="rating-row">
+        <span>Plaisir de jeu global</span>
+        <div class="rating-options">
+          <label>
+            <input type="radio" name="fun du jeu" value="1/5" required />
+            ★☆☆☆☆
+          </label>
+          <label>
+            <input type="radio" name="fun du jeu" value="2/5" />
+            ★★☆☆☆
+          </label>
+          <label>
+            <input type="radio" name="fun du jeu" value="3/5" />
+            ★★★☆☆
+          </label>
+          <label>
+            <input type="radio" name="fun du jeu" value="4/5" />
+            ★★★★☆
+          </label>
+          <label>
+            <input type="radio" name="fun du jeu" value="5/5" />
+            ★★★★★
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter / infos du futur jeu -->
+    <div class="form-group newsletter-group">
+      <label>
+        <input type="checkbox" name="Recevoir des news du site" value="yes" />
+        J’accepte de recevoir des nouvelles du futur jeu et des mises à jour.
+      </label>
+    </div>
+
+    <!-- Champ caché optionnel : langue ou contexte -->
+    <input type="hidden" name="source" value="Fractionary - page Contact" />
+
+    <!-- Bouton d’envoi -->
+    <button type="submit" class="btn-submit">
+      Envoyer
+    </button>
+  </form>
+</section>

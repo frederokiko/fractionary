@@ -10,8 +10,8 @@ export const CAT_PUZZLE: PuzzleDefinition = {
     { id:'head', kind:'unit', x:22.5, y:40, r:0, color:'rgb(239,154,72)' },//ok
     // oreilles droite 
     //1/12 compposées de 2 parts (1/12d et 1/12g)
-    { id:'ear-r-0', kind:'twelfthd', x:30.5, y:21.5, r:30, color:'rgb(241,154,190)' },//ok
-    { id:'ear-r-1', kind:'twelfthg', x:30.5, y:21.5, r:30, color:'rgb(241,154,190)' },//ok
+    { id:'ear-r-0', kind:'twelfthd', x:30.5, y:21.7, r:30, color:'rgb(241,154,190)' },//ok
+    { id:'ear-r-1', kind:'twelfthg', x:30.5, y:21.3, r:30, color:'rgb(241,154,190)' },//ok
     //oreilles gauche
     { id:'ear-l-0', kind:'twelfthd', x:14.5, y:21.5, r:-30, color:'rgb(241,154,190)' },//ok
     { id:'ear-l-1', kind:'twelfthg', x:14.5, y:21.5, r:-30, color:'rgb(241,154,190)' },//ok
@@ -49,8 +49,8 @@ export const CAT_PUZZLE: PuzzleDefinition = {
     { id:'tail-1', kind:'ninth-top', x:63.5, y:47, r:0, color:'rgb(122,64,118)' },//ok
     // 1/9 droite 3fois
     { id:'tail-2', kind:'ninth-top', x:58.9, y:36.5, r:0, color:'rgb(122,64,118)' },//ok
-    { id:'tail-3', kind:'ninth-mid', x:52.9, y:29.5, r:60, color:'rgb(122,64,118)' },
-    { id:'tail-4', kind:'ninth-mid', x:43.6, y:29.5, r:60, color:'rgb(122,64,118)' },   
+    { id:'tail-3', kind:'ninth-mid', x:52.9, y:29.1, r:60, color:'rgb(122,64,118)' },
+    { id:'tail-4', kind:'ninth-mid', x:43.3, y:29.1, r:60, color:'rgb(122,64,118)' },   
 ]
 };
 

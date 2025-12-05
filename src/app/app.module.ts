@@ -22,6 +22,7 @@ import { PuzzleCanvaseComponent } from './game/puzzle-canvase/puzzle-canvase.com
 import { FractionPaneleComponent } from './game/fraction-panele/fraction-panele.component';
 import { ShapePaletteBComponent } from './game/shape-palette-b/shape-palette-b.component';
 import { TranslatePipe } from './core/translate-pipe';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TranslatePipe } from './core/translate-pipe';
     FractionPaneleComponent,
     ShapePaletteBComponent,
     TranslatePipe,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,         // <-- fournit CommonModule (NgIf, NgFor, NgClass)
